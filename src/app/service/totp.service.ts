@@ -12,11 +12,11 @@ export class TotpService {
               @Inject('apiEndpoint') private apiEndpoint: string) {
   }
 
-  establishCommunication(): Observable<any> {
+  getTOTP(): Observable<any> {
     return this.http.get<any>(`${this.apiEndpoint}/totp`);
   }
 
-  sendTotp(totp: String): Observable<any> {
+  sendTOTP(totp: String): Observable<any> {
     return this.http.get<any>(`${this.apiEndpoint}/verify-totp/${totp}`);
   }
 }
